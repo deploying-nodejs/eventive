@@ -1,4 +1,4 @@
-# Case Study - Eventive
+# Case Study - Fullstack events
 
 This case study is a full stack application called `Eventive`. It is slightly different from the others we've studied so far. It has a separate backend API server, and a separate frontend single page application. The backend is built with the [Adonis Js framework](https://adonisjs.com), and the frontend is built with the [React js](https://reactjs.org) framework. The backend exposes a REST API. The backend is powered by a mysql database for permanent data storage and a redis database for queuing.
 
@@ -46,3 +46,20 @@ The frontend of the application is a single page application created using [Crea
 - The frontend is a completely separate npm project, so install the frontend npm dependencies by changing directory to the `frontend` folder (`cd eventive/frontend`) and running `yarn install`.
 - Next, create a file called `.env` and set an environment variable `REACT_APP_API_URL=` which should point to the running backend REST API.
 - Finally, create a production build using the `yarn build` command. This will generate the production build in the `/build` folder. You can then serve this build as a single page application.
+
+## Requirements
+The following tasks are required to complete this case study:
+
+- Provision a new Digital Ocean droplet.
+- Connect to this new droplet, disable password authentication, and allow only SSH connections using a sudo user called `node`.
+- Secure the server with a firewall so that only the HTTP port is available for connection.
+- Setup this droplet with common server packages such as Nodejs, npm, yarn and PM2.
+- Install and secure mysql on this droplet.
+- Create a mysql database and database user for the application.
+- Clone the project repository.
+- Setup and run the backend REST API using PM2.
+- Run the backend queue worker as a separate PM2 process.
+- Setup and build the frontend of the application.
+- Setup an nginx configuration to serve the frontend of the application as a single page application.
+- Setup an nginx configuration to proxy traffic to the backend API.
+- Setup two DNS records (A record), one that point to the client side and another that points to the API. The client side should connect to the API using the configured domain. You can setup a subdomain on your own domain, or you can use `deployingnodejs.com` by adding an `A record` on the [A record dashboard](https://a-record-dashboard.deployingnodejs.com).
