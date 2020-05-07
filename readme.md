@@ -37,7 +37,7 @@ HASH_DRIVER=bcrypt
 ```
 
 - Mysql is required to correctly run the application. Create a Mysql database and user, and provide the credentials in the environment variables `DB_DATABASE`, `DB_USER` and `DB_PASSWORD`.
-- After setting up environment variables, run the command `node ace migrations:run` at the root of the backend project. This command sets up the database tables and fields by running migrations defined in the `backend/database/migrations` folder of the backend project.
+- After setting up environment variables, run the command `node ace migration:run --force` at the root of the backend project. This command sets up the database tables and fields by running migrations defined in the `backend/database/migrations` folder of the backend project.
 - To run the backend REST API use the `yarn start` command. In production this command should be run using a process manager such as PM2.
 - When events are created or deleted on the application, a mail notification job is queued to redis. This job notifies the administrator that something happened on the platform. Mail notification jobs are processed in the `backend/workers/mail.js` file. The API pushes the job to a queue on redis, and the mail worker pulls these jobs and processes them. This means to have these notification jobs processed, you need to also run the worker as a mail separate process. You can do this by running the command `yarn start-worker:mail` from the root of the backend project.
 
