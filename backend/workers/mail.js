@@ -3,7 +3,7 @@ const kue = require('kue')
 const Consola = require('consola')
 
 const queue = kue.createQueue({
-    redis: process.env.REDIS_CONNECTION
+    redis: process.env.REDIS_CONNECTION_URL
 })
 
 queue.process('mails', (job, done) => {

@@ -5,7 +5,7 @@ const kue = require('kue')
 const Event = use('App/Models/Event')
 
 const MailQueueWorker = kue.createQueue({
-  redis: Env.get('REDIS_CONNECTION')
+  redis: Env.get('REDIS_CONNECTION_URL')
 })
 
 class EventController {
